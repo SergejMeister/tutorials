@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: tutorial-graphql
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+spring.datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:bootexample;MODE=MySQL
+
+management:
+  port: 8091
+  security:
+    enabled: false # management port is internal only. no need to secure it.
+
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+
+graphiql:
+  mapping: /graphiql
+  endpoint: /graphql
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+    enabled: false
+    version: 0.11.11
